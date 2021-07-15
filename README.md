@@ -1,1 +1,2 @@
 # terraform-aks-k8s
+[Set up Azure storage to store Terraform state](https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks#set-up-azure-storage-to-store-terraform-state)
