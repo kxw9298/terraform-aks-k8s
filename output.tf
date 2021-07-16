@@ -20,8 +20,17 @@ output "cluster_password" {
 
 output "kube_config" {
     value = azurerm_kubernetes_cluster.k8s.kube_config_raw
+    sensitive = true
 }
 
 output "host" {
     value = azurerm_kubernetes_cluster.k8s.kube_config.0.host
+}
+
+output "identity_resource_id" {
+    value = azurerm_user_assigned_identity.testIdentity.id
+}
+
+output "identity_client_id" {
+    value = azurerm_user_assigned_identity.testIdentity.client_id
 }

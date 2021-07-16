@@ -1,10 +1,18 @@
-provider "azurerm" {
-    # The "feature" block is required for AzureRM provider 2.x. 
-    # If you are using version 1.x, the "features" block is not allowed.
-    version = "~>2.0"
-    features {}
+terraform {
+ required_providers {
+   azurerm = {
+     source = "hashicorp/azurerm"
+     version = "~>2.0"
+   }
+ }
+ backend "azurerm" {
+   resource_group_name = "myResourceGroup"
+   storage_account_name = "myresourcegrouptfstate"
+   container_name = "tfstate"
+   key = "codelab.microsoft.tfstate"
+ }
 }
 
-terraform {
-    backend "azurerm" {}
+provider "azurerm" {
+ features {}
 }
